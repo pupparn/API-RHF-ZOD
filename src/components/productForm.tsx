@@ -50,7 +50,7 @@ export default function ProductForm(
         <form
             onSubmit={handleSubmit(saveProduct)}
             noValidate
-            onKeyDown={(e) => editing && e.key === "Escape" && onCancel()}
+            onKeyDown={(e) => e.key === "Escape" && onCancel()}
             className={`mt-5 grid gap-4 rounded-xl border p-4 sm:grid-cols-2 ${editing ? "border-blue-600 bg-blue-600/5 dark:border-blue-400 dark:bg-blue-400/10" : "border-black/10 bg-black/5 dark:border-white/15 dark:bg-white/5"}`}
         >
             {editing && (
@@ -131,9 +131,7 @@ export default function ProductForm(
                     {editing ? "บันทึกการแก้ไข" : "เพิ่มสินค้า"}
                 </button>
 
-                {editing && (
-                    <button type="button" onClick={onCancel} className={cancelBtnClass}>ยกเลิก</button>
-                )}
+                <button type="button" onClick={onCancel} className={cancelBtnClass}>ยกเลิก</button>
             </div>
 
         </form>
